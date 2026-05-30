@@ -1,128 +1,229 @@
 import streamlit as st
 
 
-# =========================
-# HOME PAGE STYLING
-# =========================
-def style_background_home():
-    st.markdown("""
-        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;800&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-
-        <style>
-
-            html, body, .stApp {
-                font-family: 'Poppins', sans-serif;
-            }
-
-            .stApp{
-                background: linear-gradient(135deg, #EEF2FF, #F8FAFC) !important;
-                color: #1E293B;
-            }
-
-            .main-title{
-                font-family: 'Montserrat', sans-serif !important;
-                font-size: 64px;
-                font-weight: 800;
-                letter-spacing: 2px;
-                color: #5865F2;
-                text-align: center;
-                margin-bottom: 10px;
-            }
-
-            .subtitle{
-                text-align: center;
-                font-size: 22px;
-                color: #64748B;
-                margin-top: -10px;
-                margin-bottom: 20px;
-            }
-
-        </style>
-    """, unsafe_allow_html=True)
-
-
-# =========================
-# DASHBOARD STYLING
-# =========================
-def style_base_dashboard():
-    st.markdown("""
-        <style>
-
-            .stApp{
-                background-color: #F5F7FF !important;
-                color: #1E293B;
-                font-family: 'Poppins', sans-serif;
-            }
-
-        </style>
-    """, unsafe_allow_html=True)
-
-
-# =========================
-# BASE LAYOUT STYLING
-# =========================
 def style_base_layout():
+
     st.markdown("""
-        <style>
+    <style>
 
-            html, body, .stApp {
-                font-family: 'Poppins', sans-serif;
-            }
+    /* HIDE STREAMLIT UI */
+    #MainMenu,
+    footer,
+    header,
+    .stAppHeader {
+        visibility: hidden !important;
+        display: none !important;
+    }
 
-            .stApp{
-                background-color: #EEF2FF !important;
-                color: #1E293B;
-            }
+    /* IMPORTANT: REMOVE NEGATIVE MARGIN */
+    .block-container {
+        padding-top: 2rem !important;
+        padding-bottom: 1rem !important;
+        margin-top: 0rem !important;
+    }
 
-            #MainMenu, footer, header {
-                visibility: hidden;
-            }
+    /* FONT */
+    @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap');
 
-            .block-container{
-                padding-top: 0.5rem;
-            }
+    html,
+    body,
+    .stApp,
+    p,
+    label,
+    h1,
+    h2,
+    h3 {
+        font-family: 'Outfit', sans-serif !important;
+    }
 
-            h2 {
-                font-size: 2.5rem !important;
-                line-height: 1.2 !important;
-                margin-bottom: 0 !important;
-            }
+    /* BUTTON BASE */
+    /* ALL BUTTONS */
+    .stButton > button,
+    button[kind="primary"],
+    button[kind="secondary"],
+    button[data-testid="baseButton-primary"],
+    button[data-testid="baseButton-secondary"] {
 
-            .stButton > button {
-                border-radius: 1.5rem !important;
-                padding: 10px 18px !important;
-                font-weight: 600 !important;
-                transition: transform 0.3s ease-in-out, background-color 0.3s ease !important;
-            }
+        border-radius: 1.5rem !important;
 
-            /* PRIMARY */
-            .stButton > button[kind="primary"] {
-                background-color: #5865F2 !important;
-                color: white !important;
-                border: none !important;
-            }
+        padding: 14px 28px !important;
 
-            .stButton > button[kind="primary"]:hover {
-                background-color: #4752C4 !important;
-            }
+        font-size: 18px !important;
 
-            /* SECONDARY */
-            .stButton > button[kind="secondary"] {
-                background-color: #E2E8F0 !important;
-                color: #1E293B !important;
-                border: none !important;
-            }
+        font-weight: 700 !important;
 
-            /* TERTIARY */
-            .stButton > button[kind="tertiary"] {
-                background-color: transparent !important;
-                color: #5865F2 !important;
-                border: 1px solid #5865F2 !important;
-            }
+        border: none !important;
 
-            .stButton > button:hover {
-                transform: scale(1.05) !important;
-            }
+        transition: all 0.25s ease !important;
 
-        </style>
+        color: white !important;
+    }
+
+
+    /* PRIMARY BUTTONS = PURPLE */
+    button[kind="primary"],
+    button[data-testid="baseButton-primary"] {
+
+        background: #7C3AED !important;
+    }
+
+
+    /* SECONDARY BUTTONS = PINK */
+    button[kind="secondary"],
+    button[data-testid="baseButton-secondary"] {
+
+        background: #EC4899 !important;
+    }
+
+
+    /* HOVER */
+    .stButton > button:hover {
+
+        transform: scale(1.03) !important;
+
+        filter: brightness(1.08) !important;
+    }
+    div[data-testid="stTabs"] button p {
+            color: #000000 !important;
+            font-weight: bold !important;
+        }
+
+        h1, h2, h3 {
+            color: #000000 !important;
+        }
+
+        /* TAB TEXT */
+        div[data-testid="stTabs"] button p {
+            color: #000000 !important;
+            font-weight: bold !important;
+        }
+
+        /* HEADINGS */
+        h1, h2, h3 {
+            color: #000000 !important;
+        }
+
+        /* CAMERA BUTTON */
+        div[data-testid="stCameraInput"] button,
+        div[data-testid="stCameraInput"] button:hover,
+        div[data-testid="stCameraInput"] button:focus,
+        div[data-testid="stCameraInput"] button:active {
+
+            background-color: #7C3AED !important;
+
+            color: white !important;
+
+            border-radius: 1.5rem !important;
+
+            border: none !important;
+
+            font-size: 18px !important;
+
+            font-weight: 700 !important;
+
+            padding: 14px 28px !important;
+
+            box-shadow: none !important;
+        }
+
+        /* BUTTON TEXT */
+        div[data-testid="stCameraInput"] button p,
+        div[data-testid="stCameraInput"] button span {
+
+            color: white !important;
+
+            font-weight: 700 !important;
+        }
+
+        /* CAMERA WRAPPER */
+        div[data-testid="stCameraInput"] {
+
+            border-radius: 1.2rem !important;
+
+            overflow: hidden !important;
+        }
+    </style>
+    """, unsafe_allow_html=True)
+
+
+def style_background_home():
+
+    st.markdown("""
+    <style>
+
+    .stApp {
+        background: linear-gradient(135deg, #F3E8FF, #E9D5FF) !important;
+    }
+
+    /* SMALLER TITLE */
+    .main-title {
+
+        font-size: 38px !important;
+
+        font-weight: 800 !important;
+
+        text-align: center !important;
+
+        color: #0F172A !important;
+
+        margin-top: 10px !important;
+
+        margin-bottom: 0px !important;
+
+        line-height: 1.1 !important;
+    }
+
+    /* SUBTITLE */
+    .subtitle {
+
+        text-align: center !important;
+
+        font-size: 19px !important;
+
+        font-weight: 600 !important;
+
+        color: #475569 !important;
+
+        margin-top: 6px !important;
+
+        margin-bottom: 25px !important;
+    }
+
+    </style>
+    """, unsafe_allow_html=True)
+
+
+def style_base_dashboard():
+
+    st.markdown("""
+    <style>
+
+    .stApp {
+        background: #F3E8FF !important;
+    }
+
+    /* TOP PADDING FIX */
+    .block-container {
+        padding-top: 3rem !important;
+    }
+
+    .portal-title {
+
+        font-size: 22px !important;
+
+        font-weight: 700 !important;
+
+        color: #1E293B !important;
+
+        padding-top: 8px !important;
+    }
+
+    .portal-subtitle {
+
+        font-size: 14px !important;
+
+        color: #64748B !important;
+    }
+
+    </style>
     """, unsafe_allow_html=True)

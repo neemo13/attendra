@@ -1,3 +1,7 @@
+import sys
+import os
+sys.path.append(os.path.dirname(os.path.abspath(__file__)))
+
 import streamlit as st
 
 st.set_page_config(
@@ -23,6 +27,5 @@ def main():
         case None:
             home_screen()
 
-        
-
-main()
+if __name__ == "__main__":
+    main()
