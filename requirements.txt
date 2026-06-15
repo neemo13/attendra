@@ -14,3 +14,4 @@ soundfile==0.12.1
 numba>=0.57.0
 llvmlite>=0.40.0
 scipy
+resemblyzer==0.1.4
