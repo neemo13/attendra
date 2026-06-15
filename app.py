@@ -5,6 +5,14 @@ import streamlit as st
 
 st.set_page_config(page_title="ATTENDRA", layout="centered", page_icon= "src/ui/logo.jpg")
 
+import streamlit as st
+
+try:
+    import onnxruntime
+    st.success("ONNX Runtime imported successfully")
+except Exception as e:
+    st.error(f"ONNX Runtime failed: {e}")
+
 def init_session_state():
     defaults = {
         "attendance_images": [],
