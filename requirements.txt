@@ -1,20 +1,26 @@
-# Utlilities
-numpy
-pandas
+# --- Frontend & UI ---
+streamlit
+segno
 
-# Face recognition 
+# --- Data & Math ---
+numpy>=1.24.0,<2.0.0
+pandas>=2.0.0
 scikit-learn
-dlib-bin
-git+https://github.com/ageitgey/face_recognition_models
-setuptools<70.0.0
+scipy
 
+# --- Face Detection & Recognition ---
+insightface
+onnxruntime
+opencv-python-headless
+
+# --- Backend & Auth ---
 supabase==2.9.0
 bcrypt
 
-segno
-pillow
-
-streamlit
-
+# --- Audio / Voice ---
 librosa
 resemblyzer
+soundfile
+
+# --- Image Processing ---
+pillow

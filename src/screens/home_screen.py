@@ -46,3 +46,18 @@ def home_screen():
         ):
             st.session_state['login_type'] = 'student'
             st.rerun()
+
+        # Guest Access Button
+        if st.button('Continue as Guest', use_container_width=True, key="guest_btn"):
+            # Simulate a logged-in state
+            st.session_state['is_logged_in'] = True
+            st.session_state['login_type'] = 'teacher'
+            
+            # Assign a specific "Guest" ID
+            st.session_state['current_teacher'] = {
+                'teacher_id': 'GUEST_MODE_ID', 
+                'name': 'Demo User'
+            }
+            # add flag
+            st.session_state['is_guest'] = True 
+            st.rerun()
