@@ -1,17 +1,26 @@
+# --- Core ---
 streamlit
-numpy
+numpy==1.26.4
 pandas
-opencv-python-headless
-pillow
-segno
-supabase
-bcrypt
-scipy
 
-# --- Audio / Voice ---
+# --- Face Recognition ---
+insightface==0.7.3
+onnxruntime==1.16.3
+opencv-python-headless==4.8.1.78
+
+# --- Audio ---
 librosa==0.10.1
-soundfile==0.12.1
-numba>=0.57.0
-llvmlite>=0.40.0
+soundfile
+numba
+llvmlite
 scipy
 resemblyzer==0.1.4
+
+# --- Backend ---
+supabase
+bcrypt
+
+# --- Utils ---
+pillow
+segno
+protobuf<5
