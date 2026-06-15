@@ -1,49 +1,9 @@
-# ----------------------------
-# Frontend & UI
-# ----------------------------
-streamlit>=1.30.0
-segno
-
-# ----------------------------
-# Data & Core Math Stack
-# ----------------------------
-numpy>=1.26,<2.0
-pandas>=2.0.0
-scipy
-
-# ----------------------------
-# ML / Data Science
-# ----------------------------
-scikit-learn>=1.5.0
-
-# ----------------------------
-# Face Detection & Recognition
-# ----------------------------
-insightface
-onnxruntime>=1.17.3
+streamlit
+numpy
+pandas
 opencv-python-headless
-
-# ----------------------------
-# Backend & Auth
-# ----------------------------
-supabase>=2.9.0
-bcrypt
-
-# ----------------------------
-# Audio / Voice
-# ----------------------------
-librosa
-resemblyzer
-soundfile
-numba
-llvmlite
-
-# ----------------------------
-# Image Processing
-# ----------------------------
 pillow
-
-# ----------------------------
-# Protocol Compatibility Fix
-# ----------------------------
-protobuf<5
+segno
+supabase
+bcrypt
+scipy
