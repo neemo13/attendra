@@ -1,11 +1,13 @@
 import streamlit as st
 import numpy as np
 import json
-from insightface.app import FaceAnalysis
+
 from src.database.db import get_all_students
 
 @st.cache_resource
 def get_face_app():
+    from insightface.app import FaceAnalysis
+    
     """Caches the InsightFace model globally."""
     app = FaceAnalysis(name='buffalo_l', providers=['CPUExecutionProvider'])
     app.prepare(ctx_id=0, det_size=(640, 640))
