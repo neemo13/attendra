@@ -189,15 +189,31 @@ streamlit run app.py
 
 ---
 
-## Screenshots
+## 📸 Screenshots
 
+### Home Page
+![Home Page](assets/home_page.jpg)
 
-* Home Page
-* Teacher Dashboard
-* Face Attendance
-* Attendance Records
-* Student Dashboard
-* QR Enrollment
+### Teacher Dashboard
+![Teacher Dashboard](assets/teacher.jpg)
+
+### Face Attendance
+![Face Attendance](assets/face_attendance.jpg)
+
+### Attendance Records
+![Attendance Records](assets/attendance_records.jpg)
+
+### Student Dashboard
+![Student Dashboard 1](assets/student_1.jpg)
+
+### Student Dashboard (Alt View)
+![Student Dashboard 2](assets/student_2.jpg)
+
+### QR Enrollment
+![QR Enrollment](assets/qr.jpg)
+
+### Manual Enrollment
+![Manual Enrollment](assets/manual.jpg)
 
 ---
 
