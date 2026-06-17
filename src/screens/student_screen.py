@@ -165,7 +165,7 @@ def student_screen():
                             "Registration failed: No face detected."
                         )
 
-                    elif emb == "MULTIPLE_FACES":
+                    elif isinstance(emb, str) and emb == "MULTIPLE_FACES":
                         st.error(
                             "Registration failed: Multiple faces detected. Please ensure exactly one clear face is captured."
                         )
