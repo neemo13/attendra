@@ -9,9 +9,9 @@ import streamlit as st
 
 try:
     import onnxruntime
-    st.success("ONNX Runtime imported successfully")
+    
 except Exception as e:
-    st.error(f"ONNX Runtime failed: {e}")
+    print(f"ONNX Runtime failed: {e}")
 
 def init_session_state():
     defaults = {
