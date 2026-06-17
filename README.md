@@ -1,6 +1,6 @@
 # ATTENDRA - AI Powered Attendance System
 
-🔗 **Live Demo:** [Add Streamlit Link Here]
+🔗 **Live Demo:** [https://attendra-lzyjzxnizakusascmehfz4.streamlit.app/]
 
 📌 **Demo Access:** Click **Continue as Guest** on the home page to explore the Teacher Dashboard without creating an account.
 
@@ -10,9 +10,9 @@
 
 ATTENDRA is an AI-powered attendance management system that combines face recognition and voice verification to simplify classroom attendance.
 
-The project was built to explore how machine learning models can be integrated into a complete software application rather than being used only in notebooks and experiments.
+The idea behind this project was to take machine learning out of notebooks and build a full working application around it.
 
-The system supports:
+The system includes:
 
 * Teacher and Student portals
 * Face-based authentication
@@ -20,7 +20,7 @@ The system supports:
 * Voice-assisted attendance
 * Subject enrollment through QR codes, links, and course codes
 * Attendance analytics and history
-* Guest demo mode for recruiters and evaluators
+* Guest mode for demo access
 
 ---
 
@@ -28,25 +28,24 @@ The system supports:
 
 ### 👨‍🏫 Teacher Portal
 
-* Teacher registration and login
+* Register and login as teacher
 * Create and manage subjects
+* Take attendance using photos
+* Voice-based attendance support
 * View attendance records
-* Upload classroom photos for attendance
-* Voice-assisted attendance
 * Share subjects using:
-
-  * QR Code
-  * Direct enrollment link
-  * Subject/Course code
-* Guest demo mode
+  * QR code
+  * Direct link
+  * Subject code
+* Guest mode support
 
 ---
 
 ### 👨‍🎓 Student Portal
 
-* Student registration
-* Face-based login
-* Enroll into subjects
+* Register using face data
+* Login using face recognition
+* Enroll in subjects
 * View attendance percentage
 * View attendance history
 * Unenroll from subjects
@@ -57,11 +56,11 @@ The system supports:
 
 ### Face Attendance Pipeline
 
-1. Teacher uploads classroom photographs.
-2. Faces are detected using InsightFace.
-3. 512-dimensional face embeddings are generated.
-4. Embeddings are matched against enrolled student embeddings.
-5. Identified students are added to the attendance queue.
+1. Teacher uploads classroom images
+2. Faces are detected using InsightFace
+3. 512-dimensional embeddings are generated
+4. Embeddings are matched with student data
+5. Matching students are marked present
 
 ---
 
@@ -80,29 +79,26 @@ The system supports:
 Students can join a subject using three methods:
 
 ### 1. QR Code
+Teachers generate a QR code that opens the join page directly.
 
-Teachers can share a generated QR code that automatically opens the enrollment page.
-
-### 2. Direct Enrollment Link
-
-Teachers can share a link that redirects students to the application and pre-fills the subject information.
+### 2. Direct Link
+A link is shared that opens the app with the subject pre-filled.
 
 ### 3. Subject Code
-
-Students can manually enter the course code and enroll.
+Students can manually enter the course code to join.
 
 ---
 
 ## Demo Mode
 
-To allow recruiters and evaluators to explore the application safely, ATTENDRA includes a **Guest Mode**.
+The app includes a Guest Mode so anyone can try it without signing up.
 
-Guest Mode provides:
+Guest Mode includes:
 
-* Demo subjects
-* Sample attendance records
-* Simulated face and voice attendance
-* Safe interaction without modifying production data
+* Sample subjects
+* Fake attendance data
+* Simulated face and voice results
+* No database changes
 
 ---
 
@@ -162,7 +158,7 @@ ATTENDRA
 Clone the repository:
 
 ```bash
-git clone https://github.com/<your-username>/ATTENDRA.git
+git clone https://github.com/neemo13/attendra
 cd ATTENDRA
 ```
 
@@ -209,40 +205,36 @@ streamlit run app.py
 
 This project taught me much more than training machine learning models.
 
-### Robust API Integration & Defensive Programming
+### API and Database Handling
 
-I learned to handle missing data, unexpected responses, and validation when integrating with remote databases.
+How to deal with real-world data, missing values, and API responses.
 
-### Understanding Streamlit's Execution Model
+### Streamlit Behavior
 
-I learned how Streamlit's rerun architecture works and how to manage application state using `st.session_state`.
+How Streamlit reruns scripts and how to manage state using st.session_state.
 
-### Separation Between Demo and Production Logic
+### Separating Demo and Real Logic
 
-I implemented a Guest Mode with mocked data, which taught me how to separate business logic from presentation logic.
+Built a Guest Mode to safely show the app without touching real data.
 
-### Working With Multimodal Data
+### Working with Embeddings
 
-I learned how to store and process high-dimensional data such as face embeddings and voice embeddings alongside traditional relational data.
+Handled face and voice embeddings and stored them in a database.
 
-### Building User-Centric Interfaces
+### Building Full Applications
 
-I learned that good software is not only about functionality but also about user experience, feedback, and responsiveness.
-
-### End-to-End Software Engineering
-
-This project gave me practical experience in combining machine learning, databases, authentication, frontend development, and deployment into one application.
+Combined ML, backend, frontend, and deployment into one system.
 
 ---
 
 ## Future Improvements
 
-* Better speaker enrollment and verification
+* Better voice enrollment and verification
 * Attendance analytics dashboard
-* Export attendance reports
+* Export reports (PDF/CSV)
 * Timetable integration
 * Email notifications
-* Mobile-friendly interface
+* Mobile-friendly UI
 
 ---
 
@@ -250,4 +242,4 @@ This project gave me practical experience in combining machine learning, databas
 
 Built by **Ananya K**
 
-Final Year B.Tech Student | Exploring AI, Machine Learning, and Full-Stack Development
+Final Year B.Tech Student | AI / ML + Full Stack Developer
