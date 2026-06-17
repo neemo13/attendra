@@ -41,6 +41,7 @@ def run_attendance_analysis(selected_sub):
         return
 
     from src.pipelines.group_face import process_group_photo
+
     with st.spinner("Analyzing photos..."):
         sids, matrix = get_subject_student_matrix(selected_sub['subject_id'])
         

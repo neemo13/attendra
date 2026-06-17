@@ -4,9 +4,8 @@ import io
 
 @st.dialog("Share Class Link")
 def share_subject_dialogue(subject_name, subject_code):
-    app_domain = "http://localhost:8501"
-    # Assuming the join URL structure includes the subject_code
-    join_url = f"{app_domain}/join/{subject_code}"
+    app_domain = st.secrets["APP_URL"]
+    join_url = f"{app_domain}/?join={subject_code}"
 
     st.header(f"Share {subject_name}")
     st.write(f"Students can join **{subject_name}** by scanning this code or using the link below.")
