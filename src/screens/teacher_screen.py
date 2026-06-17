@@ -17,7 +17,6 @@ from src.database.db import (
 from src.components.account_settings import account_settings_ui
 from src.components.dialogue_add_photo import add_photos_dialog
 from src.components.dialogue_voice_assistance import voice_attendance_dialog
-from src.pipelines.group_face import process_group_photo
 from src.components.dialogue_edit import edit_attendance_dialog
 
 from src.components.dialogue_create_subject import create_subject_dialogue
@@ -40,7 +39,8 @@ def run_attendance_analysis(selected_sub):
             st.session_state.attendance_master_queue.extend(mock_entries)
             st.toast("Demo scan finished! Found 2 students.")
         return
-    
+
+    from src.pipelines.group_face import process_group_photo
     with st.spinner("Analyzing photos..."):
         sids, matrix = get_subject_student_matrix(selected_sub['subject_id'])
         
