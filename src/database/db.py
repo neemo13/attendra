@@ -136,7 +136,7 @@ def get_teacher_subjects(teacher_id):
             {
                 "subject_id": 999,
                 "name": "Introduction to AI",
-                "subject_code": "CS101",
+                "subject_code": "CS103",
                 "section": "A",
                 "total_students": 45,
                 "total_classes": 12
@@ -150,21 +150,30 @@ def get_teacher_subjects(teacher_id):
                 "total_classes": 8
             }
         ]
-    
-    # Fetches subjects with student counts and attendance logs
-    response = supabase.table("subjects").select("*, subject_students(count), attendance_logs(*)").eq("teacher_id", teacher_id).execute()
+
+    response = supabase.table("subjects") \
+        .select("subject_id, name, subject_code, section") \
+        .eq("teacher_id", teacher_id) \
+        .execute()
+
     subjects = response.data
 
     for sub in subjects:
-        sub['total_students'] = sub.get("subject_students", [{}])[0].get("count", 0) if sub.get("subject_students") else 0
-        
-        logs = sub.get("attendance_logs", [])
-        unique_sessions = len(set(log['timestamp'] for log in logs)) if logs else 0
-        sub["total_classes"] = unique_sessions
+        # REAL-TIME student count
+        count_res = supabase.table("subject_students") \
+            .select("student_id", count="exact") \
+            .eq("subject_id", sub["subject_id"]) \
+            .execute()
 
-        # Cleanup
-        sub.pop("subject_students", None)
-        sub.pop("attendance_logs", None)
+        sub["total_students"] = count_res.count or 0
+
+        # attendance classes (keep your logic)
+        logs = supabase.table("attendance_logs") \
+            .select("timestamp") \
+            .eq("subject_id", sub["subject_id"]) \
+            .execute().data
+
+        sub["total_classes"] = len(set(l["timestamp"] for l in logs)) if logs else 0
 
     return subjects
 
