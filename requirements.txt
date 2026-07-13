@@ -22,4 +22,4 @@ llvmlite
 resemblyzer
 
 protobuf<5
-
+setuptools>=65
